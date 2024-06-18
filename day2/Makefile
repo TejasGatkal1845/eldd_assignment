@@ -1,10 +1,9 @@
-
-obj-m = que1.1.o
+obj-m = bbb.o
 
 modules:
-	make -C /lib/modules/`uname -r`/build M=`pwd` modules
+	make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- -C /home/tejas/linux/ M=`pwd` modules
 
 clean:
-	make -C /lib/modules/`uname -r`/build M=`pwd` clean
+	make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- -C /home/tejas/linux/ M=`pwd` clean
 
 .phony : clean
